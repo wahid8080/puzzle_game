@@ -5,11 +5,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class CallRacord {
 
+    public CallRacord() {
+    }
+
     @SerializedName("from")
     @Expose
     private String from;
 
-    @SerializedName("from")
+    @SerializedName("to")
     @Expose
     private String to;
 

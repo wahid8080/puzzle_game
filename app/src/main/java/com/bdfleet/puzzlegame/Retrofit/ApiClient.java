@@ -25,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "https://teamtracker.bdfleet.com/"; //cloud server
+    public static final String BASE_URL = "https://teamtracker.bdfleet.com/api/"; //cloud server
 
     private static Retrofit retrofit = null;
     private static Gson gson = new GsonBuilder().setLenient().create();

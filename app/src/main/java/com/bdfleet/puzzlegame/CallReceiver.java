@@ -18,13 +18,17 @@ public class CallReceiver extends PhonecallReceiver {
     @Override
     protected void onIncomingCallStarted(Context ctx, String number, String start) {
         super.onIncomingCallStarted(ctx, number, start);
+    }
 
+    @Override
+    protected void onOutgoingCallStarted(Context ctx, String number, String start) {
+        super.onOutgoingCallStarted(ctx, number, start);
     }
 
     @Override
     protected void onIncomingCallEnded(Context ctx, String ownerNum, String number, String start, String end) {
         super.onIncomingCallEnded(ctx, ownerNum, number, start, end);
-        Toast.makeText(ctx,"To "+number+" "+ownerNum+"Owner Number"+" Incoming Call Start  "+start+" Incoming Call End  "+end,Toast.LENGTH_LONG).show();
+        Toast.makeText(ctx,"Other "+number+" Owner "+ownerNum+" In Call Start  "+start+" In Call End  "+end,Toast.LENGTH_LONG).show();
 
         sendData(ctx,1,ownerNum,number,start,end);
     }
@@ -32,8 +36,7 @@ public class CallReceiver extends PhonecallReceiver {
     @Override
     protected void onOutgoingCallEnded(Context ctx, String ownerNum, String number, String start, String end) {
         super.onOutgoingCallEnded(ctx, ownerNum, number, start, end);
-        Toast.makeText(ctx,"From "+number+" "+ownerNum+" Out Going Call Start  "+start+" Out Going Call End  "+end,Toast.LENGTH_LONG).show();
-
+        Toast.makeText(ctx,"Other "+number+" Owner "+ownerNum+" Out Call Start  "+start+" Out Call End  "+end,Toast.LENGTH_LONG).show();
         sendData(ctx,2,ownerNum,number,start,end);
     }
 
